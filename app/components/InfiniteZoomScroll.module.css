@@ -1,0 +1,47 @@
+.zoomContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoomLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrapper {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 8px; /* Slight rounding looks cleaner for standalone floating images */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 2px solid white;
+}
+
+/* Left side */
+.img1 { top: 15%; left: 2%; width: clamp(100px, 12vw, 180px); height: clamp(140px, 16vw, 240px); }
+.img2 { top: 45%; left: 4%; width: clamp(90px, 10vw, 160px); height: clamp(120px, 14vw, 220px); }
+.img5 { bottom: 10%; left: 3%; width: clamp(110px, 13vw, 200px); height: clamp(150px, 17vw, 260px); }
+
+/* Right side */
+.img3 { top: 20%; right: 2%; width: clamp(110px, 13vw, 200px); height: clamp(150px, 17vw, 260px); }
+.img4 { top: 50%; right: 4%; width: clamp(90px, 10vw, 160px); height: clamp(120px, 14vw, 220px); }
+.img6 { bottom: 15%; right: 3%; width: clamp(100px, 12vw, 180px); height: clamp(140px, 16vw, 240px); }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(247,247,247,0.1) 0%, rgba(247,247,247,0.9) 80%);
+  z-index: 10;
+  pointer-events: none;
+}

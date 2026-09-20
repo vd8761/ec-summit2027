@@ -1,0 +1,173 @@
+.section {
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.topContainer {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 40px;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.navLink {
+  font-family: var(--font-geist);
+  font-size: 10px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.millionaireSummit {
+  color: #252525;
+  font-size: clamp(40px, 9.5vw, 179px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-right: 20px; /* Space between SUMMIT and 2027 */
+}
+
+.year {
+  font-size: clamp(40px, 9.5vw, 179px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+}
+
+/* BOTTOM BAR */
+.bottomBar {
+  width: 100%;
+  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  padding: 0 40px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomBarContainer {
+  width: 100%;
+  max-width: 1600px; /* Match the topContainer max-width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bottomLeftGroup {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Space between copyright and policy links */
+  flex-wrap: wrap;
+}
+
+.bottomText {
+  font-family: var(--font-geist);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.socialIconWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.socialIconWrapper:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon {
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .millionaireSummit {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottomBar {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .millionaireSummit {
+    margin-bottom: 12px; /* stack the year below on very small screens if it wraps */
+    margin-right: 0;
+  }
+}

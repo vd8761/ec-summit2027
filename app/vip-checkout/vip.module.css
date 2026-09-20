@@ -1,0 +1,200 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: 4rem 2rem;
+}
+
+.checkoutContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.checkoutHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.backLink {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .checkoutGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.orderSummary h2, .checkoutForm h2 {
+  font-family: var(--font-space-grotesk);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summaryCard {
+  background: rgba(0, 71, 255, 0.05);
+  border: 1px solid rgba(0, 71, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .summaryCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.summaryCard h3 {
+  font-family: var(--font-space-grotesk);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.passDesc {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .passDesc {
+    color: #aaa;
+  }
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.totalRow {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .totalRow {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+.perksList h4 {
+  margin-bottom: 1rem;
+  font-family: var(--font-space-grotesk);
+}
+
+.perksList ul {
+  list-style: none;
+}
+
+.perksList li {
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.form {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .form {
+    background: var(--color-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .formGroup input {
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.paymentTitle {
+  font-family: var(--font-space-grotesk);
+  margin: 3rem 0 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .paymentTitle {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #0036cc;
+}
+
+.secureText {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .secureText {
+    color: #aaa;
+  }
+}

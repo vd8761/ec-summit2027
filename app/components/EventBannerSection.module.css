@@ -1,0 +1,190 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  /* Use aspect ratio or min-height to maintain shape */
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  background-image: url('/background_image.svg'), linear-gradient(90deg, #003DFF 0%, #3057D2 50%, #FF8800 100%);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  flex-wrap: nowrap;
+  gap: 40px;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 80px;
+}
+
+.dayText {
+  font-family: var(--font-geist);
+  font-size: clamp(12px, 0.8vw, 14px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.83;
+  margin-bottom: -20px; /* Pull closer to the large number */
+}
+
+.dateNumber {
+  font-family: var(--font-geist);
+  font-size: clamp(100px, 19vw, 363px);
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+}
+
+.monthYear {
+  font-family: var(--font-geist);
+  font-size: clamp(24px, 2.5vw, 43px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.verticalDivider {
+  width: 1px;
+  align-self: stretch;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 40px;
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-right: 140px;
+}
+
+.timeText {
+  font-family: var(--font-geist);
+  font-size: clamp(20px, 2.5vw, 48px);
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.venueText {
+  font-family: var(--font-geist);
+  font-size: clamp(16px, 1.8vw, 32px);
+  font-weight: 400; /* Regular for the second half */
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.venueBold {
+  font-weight: 600;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+}
+
+.contactRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactText {
+  font-family: var(--font-geist);
+  font-size: clamp(14px, 1.2vw, 20px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Marquee Bar */
+.marqueeBar {
+  width: 100%;
+  background-color: #030F26; /* Dark blue background */
+  height: 55px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border-top: 2px solid #003DFF;
+  border-bottom: 2px solid #003DFF;
+}
+
+.marqueeContent {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollText 30s linear infinite;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between text and dot */
+  margin-right: 30px; /* Space between dot and next text */
+}
+
+.marqueeText {
+  font-family: var(--font-geist);
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.glowDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003DFF, #FF8800);
+  box-shadow: 0 0 10px rgba(0, 61, 255, 0.8), 0 0 15px rgba(255, 136, 0, 0.6);
+  flex-shrink: 0;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .contentContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+  
+  .leftContent {
+    align-items: center;
+  }
+}

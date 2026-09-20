@@ -1,0 +1,303 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 5%;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* subtle divider like in design */
+}
+
+.menuText {
+  font-family: var(--font-geist);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.splitContent {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.leftColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 50%;
+  background-color: #f5f5f5;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10% clamp(40px, 4vw, 80px) 10%; /* 10% padding to match 5% of full width, since it's 50% width */
+  width: 100%;
+  flex-grow: 1;
+  padding-top: clamp(20px, 3vw, 40px);
+}
+
+.badges {
+  display: flex;
+  gap: 16px;
+  margin-bottom: clamp(20px, 2vw, 40px);
+}
+
+.badge {
+  padding: 8px 16px;
+  font-family: var(--font-geist);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.badgeGradient {
+  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  color: #fff;
+  border: none;
+}
+
+.badgeBlue {
+  background-color: #003DFF;
+  color: #fff;
+  border: none;
+}
+
+.badgeOutline {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.price {
+  font-family: var(--font-geist);
+  font-size: clamp(48px, 4.68vw, 90px);
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: var(--font-geist);
+  font-size: clamp(16px, 1.25vw, 24px);
+  font-weight: 300;
+  color: #000;
+  margin-bottom: clamp(24px, 2.5vw, 48px);
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: clamp(24px, 2.5vw, 48px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-family: var(--font-geist);
+  font-size: clamp(14px, 1.04vw, 20px);
+  font-weight: 400;
+  color: #000;
+}
+
+.asterisk {
+  color: red;
+  margin-left: 4px;
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  font-family: var(--font-geist);
+  margin-top: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  background-color: transparent;
+  font-family: var(--font-geist);
+  font-size: clamp(14px, 1.04vw, 20px);
+  font-weight: 300;
+  color: #000;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputError {
+  border-color: red !important;
+}
+
+/* Fix browser autofill background color overriding transparent */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover, 
+.input:-webkit-autofill:focus, 
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f5f5f5 inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.input:focus {
+  border-color: #003DFF;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: clamp(16px, 1.5vw, 24px);
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox:hover {
+  border-color: #003DFF;
+}
+
+.checkbox:checked {
+  background-color: #003DFF;
+  border-color: #003DFF;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.termsText {
+  font-family: var(--font-geist);
+  font-size: clamp(12px, 0.83vw, 16px);
+  font-weight: 300;
+  color: #000;
+  cursor: pointer;
+}
+
+.payButton {
+  width: 100%;
+  padding: clamp(12px, 1vw, 16px);
+  color: #fff;
+  border: none;
+  font-family: var(--font-geist);
+  font-size: clamp(16px, 1.04vw, 20px);
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: clamp(32px, 3vw, 60px);
+}
+
+.btnGradient {
+  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+}
+
+.btnBlue {
+  background-color: #003DFF;
+}
+
+.secureText {
+  text-align: center;
+  font-family: var(--font-geist);
+  font-size: clamp(14px, 1.04vw, 20px);
+  color: #3D3D3D;
+  font-weight: 400;
+  margin-top: auto;
+}
+
+.secureText span {
+  font-weight: 600;
+}
+
+.rightColumn {
+  flex: 1;
+  position: relative;
+  max-width: 50%;
+  min-height: 100vh;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #003DFF 0%, transparent 100%);
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 968px) {
+  .splitContent {
+    flex-direction: column;
+  }
+  
+  .leftColumn {
+    max-width: 100%;
+    order: 2;
+  }
+  
+  .rightColumn {
+    max-width: 100%;
+    order: 1;
+    min-height: 50vh;
+  }
+}
