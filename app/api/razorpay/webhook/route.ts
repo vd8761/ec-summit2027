@@ -1,11 +1,7 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
-import Razorpay from 'razorpay';
-import { Resend } from 'resend';
 import { isPaymentAlreadyRecorded, appendRegistrationRow } from '@/lib/sheets';
-import { generateRegistrationEmail } from '../verify/emailTemplate';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { dispatchTicketConfirmation } from '@/lib/mailer';
 
 /**
  * Razorpay Webhook: /api/razorpay/webhook
@@ -76,47 +72,39 @@ export async function POST(req: NextRequest) {
         const designation = notes.designation || '';
         const tier        = notes.ticketTier  || 'Standard Pass';
 
-        // ── 4. Append to Google Sheets ─────────────────────────────────────────
+        // ── 4. Append to Google Sheets ──────────────────────────────────────────
         await appendRegistrationRow({
-          orderId,
+          createdAt:   new Date().toISOString(),
           paymentId,
+          orderId,
+          ticketTier:  tier,
+          amount,
           name,
           email,
           phone,
-          ticketTier: tier,
-          amount,
-          status:    'Confirmed',
-          createdAt: new Date().toISOString(),
+          company,
+          designation,
+          status:      'Confirmed',
         });
 
-        // ── 5. Send confirmation email via Resend ──────────────────────────────
+        // ── 5. Send confirmation email via Resend ────────────────────────────────────
         try {
           if (email) {
-            const htmlContent = generateRegistrationEmail({
-              fullName:    name,
-              email,
+            await dispatchTicketConfirmation({
+              to:          email,
+              name,
+              orderId,
+              paymentId,
+              ticketTier:  tier,
+              amount,
               phone,
               company,
               designation,
-              paymentId,
-              passType:   tier,
-              amountPaid: amount,
+              bcc: [process.env.ADMIN_EMAIL || ''].filter(Boolean),
             });
-
-            const { error: emailError } = await resend.emails.send({
-              from:    process.env.SEND_FROM_EMAIL || 'onboarding@resend.dev',
-              to:      [email],
-              bcc:     [process.env.ADMIN_EMAIL || ''].filter(Boolean),
-              subject: `Registration Confirmed – EC Summit 2027 (${tier})`,
-              html:    htmlContent,
-            });
-
-            if (emailError) {
-              console.error('[Webhook][Resend] Email error:', emailError);
-            }
           }
         } catch (emailErr) {
-          console.error('[Webhook][Resend] Exception:', emailErr);
+          console.error('[Webhook][Mailer] Exception:', emailErr);
         }
       }
     }

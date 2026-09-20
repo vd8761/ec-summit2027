@@ -2,11 +2,8 @@ import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import Razorpay from 'razorpay';
 import { z } from 'zod';
-import { Resend } from 'resend';
 import { isPaymentAlreadyRecorded, appendRegistrationRow } from '@/lib/sheets';
-import { generateRegistrationEmail } from './emailTemplate';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { dispatchTicketConfirmation } from '@/lib/mailer';
 
 const VerifySchema = z.object({
   razorpay_order_id:   z.string().min(1),
@@ -108,32 +105,20 @@ export async function POST(req: Request) {
 
     // ── 5. Send confirmation email via Resend ────────────────────────────────────
     try {
-      const htmlContent = generateRegistrationEmail({
-        fullName:    formData.fullName,
-        email:       formData.email,
+      await dispatchTicketConfirmation({
+        to:          formData.email,
+        name:        formData.fullName,
+        orderId:     razorpay_order_id,
+        paymentId:   razorpay_payment_id,
+        ticketTier:  passType,
+        amount:      paidAmount,
         phone:       formData.phone,
         company:     formData.company,
         designation: formData.designation,
-        paymentId:   razorpay_payment_id,
-        passType,
-        amountPaid:  paidAmount,
       });
-
-      const { error: emailError } = await resend.emails.send({
-        from:    process.env.SEND_FROM_EMAIL || 'onboarding@resend.dev',
-        to:      [formData.email],
-        cc:      process.env.EMAIL_CC ? process.env.EMAIL_CC.split(',') : undefined,
-        bcc:     [process.env.ADMIN_EMAIL || '', process.env.EMAIL_BCC || ''].filter(Boolean),
-        subject: `Registration Confirmed – EC Summit 2027 (${passType})`,
-        html:    htmlContent,
-      });
-
-      if (emailError) {
-        // Log but don't fail — ticket row is already saved in Sheets
-        console.error('[Resend] Email dispatch error:', emailError);
-      }
     } catch (emailErr) {
-      console.error('[Resend] Exception sending email:', emailErr);
+      // Log but don't fail — ticket row is already saved in Sheets
+      console.error('[Mailer] Exception:', emailErr);
     }
 
     return NextResponse.json({ success: true, message: 'Payment verified and registration saved' });

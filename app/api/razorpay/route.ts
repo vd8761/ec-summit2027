@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     const order = await instance.orders.create({
       amount:          amountInPaisa,
       currency:        'INR',
-      payment_capture: 1,  // auto-capture on authorization (test + live)
+      payment_capture: true,  // auto-capture on authorization (test + live)
       receipt:         `rcpt_${Date.now().toString().slice(-10)}`,
       // Store attendee data in notes so the webhook can fulfill without the browser
       notes: {
