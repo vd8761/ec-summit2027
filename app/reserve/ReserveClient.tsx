@@ -184,8 +184,12 @@ function ReserveContent({ config }: { config: any }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: data.rawPrice,
-          receipt: formData.email,
+          ticketTier: type,           // server resolves authoritative price from this
+          name:        formData.fullName,
+          email:       formData.email,
+          phone:       formData.phone,
+          company:     formData.company,
+          designation: formData.designation,
         })
       });
       const resData = await response.json();
@@ -213,7 +217,8 @@ function ReserveContent({ config }: { config: any }) {
                 razorpay_signature: response.razorpay_signature,
                 formData: formData,
                 passType: data.badges[0].text,
-                amount: data.rawPrice,
+                ticketTier: type,
+                // amount intentionally omitted — server fetches from Razorpay API
               })
             });
             

@@ -2,6 +2,11 @@ import { NextResponse } from 'next/server';
 import { generateRegistrationEmail } from '../razorpay/verify/emailTemplate';
 
 export async function GET(req: Request) {
+  // Blocked in production — development/preview only
+  if (process.env.IS_PRODUCTION === 'true') {
+    return new NextResponse('Forbidden', { status: 403 });
+  }
+
   // Mock data for the test email preview
   const mockData = {
     fullName: "Lokesh Rajendrababu",

@@ -5,6 +5,14 @@ import { generateRegistrationEmail } from '../razorpay/verify/emailTemplate';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function GET(req: Request) {
+  // Blocked in production — development/testing only
+  if (process.env.IS_PRODUCTION === 'true') {
+    return NextResponse.json(
+      { error: 'This endpoint is disabled in production' },
+      { status: 403 }
+    );
+  }
+
   try {
     // Mock data for the test email
     const mockData = {
