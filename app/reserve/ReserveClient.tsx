@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import styles from "./reserve.module.css";
 
 const formatDate = (dateString: string) => {
@@ -117,6 +118,7 @@ function ReserveContent({ config }: { config: any }) {
   const [isVerifying, setIsVerifying] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [paymentError, setPaymentError] = useState("");
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -168,10 +170,35 @@ function ReserveContent({ config }: { config: any }) {
       return;
     }
 
-    // Start payment processing
+    if (!executeRecaptcha) {
+      setPaymentError("Security check is not loaded yet. Please wait a moment and try again.");
+      return;
+    }
+
     setIsProcessing(true);
     setPaymentError("");
+
+    try {
+      const token = await executeRecaptcha('reserve');
+      const recaptchaRes = await fetch('/api/verify-recaptcha', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token })
+      });
+      const recaptchaData = await recaptchaRes.json();
+      
+      if (!recaptchaData.success) {
+        setPaymentError("Security verification failed. Please refresh the page and try again.");
+        setIsProcessing(false);
+        return;
+      }
+    } catch (e) {
+      setPaymentError("Security check failed. Please refresh the page and try again.");
+      setIsProcessing(false);
+      return;
+    }
     
+    // Start payment processing
     const isLoaded = await loadRazorpayScript();
     if (!isLoaded) {
       setPaymentError("Payment gateway failed to load. Please check your connection.");

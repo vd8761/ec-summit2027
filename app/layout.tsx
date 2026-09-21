@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   description: "Join the EC Millionaire Summit 2027. Connect, create, and collaborate.",
 };
 
+import Providers from "./components/Providers";
+
 export default function RootLayout({
   children,
 }: {
@@ -30,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${geist.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
