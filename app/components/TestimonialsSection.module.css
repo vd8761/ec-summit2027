@@ -10,28 +10,26 @@
   width: 100%;
   padding: 0 40px;
   display: flex;
-  gap: 54px;
+  gap: 40px;
   align-items: center;
+  min-height: 400px;
 }
 
 .imageColumn {
-  flex: 0 0 35%;
+  flex: 0 0 28%;
   position: relative;
+  aspect-ratio: 4 / 5;
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-.personImage {
-  width: 100%;
   height: 100%;
-  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   z-index: 2;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  filter: grayscale(100%);
 }
 
 .accentBorder {
@@ -42,27 +40,41 @@
   height: 100%;
   z-index: 1;
   background: linear-gradient(to right, #003DFF, #3057D2, #FF8800);
+  border-radius: 12px;
 }
+
+.personImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%);
+}
+
+
 
 .contentColumn {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
 }
 
 .subtitle {
   font-family: var(--font-geist);
   font-weight: 700;
-  font-size: clamp(10px, 0.75vw, 14.4px);
+  font-size: 16px;
   line-height: 0.83;
   letter-spacing: 0;
-  background: linear-gradient(to right, #FF8800, #3057D2, #003DFF);
+  background-image: linear-gradient(90deg, #FF8800, #3057D2, #003DFF);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-  margin-bottom: 24px;
+  margin-bottom: clamp(16px, 2vw, 22px);
   display: inline-block;
+  width: fit-content;
   text-transform: uppercase;
 }
 
@@ -106,7 +118,8 @@
   gap: 2px;
 }
 
-.arrowPrev, .arrowNext {
+.arrowPrev,
+.arrowNext {
   width: 28px;
   height: 28px;
   display: flex;
@@ -127,7 +140,8 @@
   color: #ffffff;
 }
 
-.arrowPrev:hover, .arrowNext:hover {
+.arrowPrev:hover,
+.arrowNext:hover {
   opacity: 0.8;
 }
 
@@ -140,9 +154,9 @@
 }
 
 .progressFill {
-  width: clamp(90px, 8.2vw, 157px);
   height: 100%;
   background: linear-gradient(to right, #003DFF, #3057D2, #FF8800);
+  transition: width 0.3s ease;
 }
 
 .logosRow {
@@ -163,17 +177,19 @@
   .container {
     flex-direction: column;
     gap: 40px;
+    min-height: auto;
   }
-  
+
   .imageColumn {
     width: 80%;
     margin: 0 auto;
+    aspect-ratio: 4 / 5;
   }
-  
+
   .quote {
     font-size: 20px;
   }
-  
+
   .logosRow {
     justify-content: center;
   }

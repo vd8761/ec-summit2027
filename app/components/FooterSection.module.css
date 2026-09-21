@@ -71,7 +71,7 @@
   line-height: 1;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  background: linear-gradient(90deg, #FF8800 0%, #3057D2 54.33%, #003DFF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,7 +81,7 @@
 /* BOTTOM BAR */
 .bottomBar {
   width: 100%;
-  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  background: linear-gradient(90deg, #FF8800 0%, #3057D2 54.33%, #003DFF 100%);
   padding: 0 40px;
   min-height: 44px;
   display: flex;

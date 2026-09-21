@@ -21,56 +21,48 @@ const scheduleData = [
     title: <>REGISTRATION &<br />NETWORKING</>,
     miniTitle: "",
     desc: "Exploring how a new generation of entrepreneurs is redefining growth, innovation, leadership, and success.",
-    image: "/photo2.webp",
   },
   {
     time: "09:00 AM",
     title: <>OPENING<br />CEREMONY</>,
     miniTitle: "",
     desc: <>Welcome to the <strong>Millionaire Summit & Awards.</strong> Setting the stage for a day of ideas, conversations, and possibilities.</>,
-    image: "/photo3.webp",
   },
   {
     time: "09:30 AM",
     title: <>KEYNOTE<br />SESSION</>,
     miniTitle: "",
     desc: "Hear from a visionary leader on ambition, leadership, innovation, and building businesses that create lasting impact.",
-    image: "/photo1.webp",
   },
   {
     time: "10:30 AM",
     title: <>THE FUTURE<br />OF BUSINESS</>,
     miniTitle: "Executive Panel Discussion",
     desc: "A powerful conversation exploring growth, leadership, innovation, investment, and the forces shaping tomorrow's businesses.",
-    image: "/photo4.webp",
   },
   {
     time: "12:00 PM",
     title: <>EXECUTIVE<br />NETWORKING</>,
     miniTitle: "",
     desc: "Connect with entrepreneurs, founders, investors, and industry leaders in an environment built for meaningful conversations.",
-    image: "/photo5.webp",
   },
   {
     time: "01:00 PM",
     title: <>NETWORKING<br />LUNCH</>,
     miniTitle: "",
     desc: "An opportunity to continue conversations, exchange ideas, and build valuable relationships over lunch.",
-    image: "/photo6.webp",
   },
   {
     time: "02:30 PM",
     title: <>STRATEGIC<br />CONVERSATIONS</>,
     miniTitle: "",
     desc: "Exploring new perspectives, emerging opportunities, and the decisions shaping the future of business.",
-    image: "/photo7.webp",
   },
   {
     time: "03:30 PM",
     title: <>THE NEW AGE OF<br />ENTREPRENEURSHIP</>,
     miniTitle: "Executive Panel Discussion",
     desc: "A conversation on building, scaling, adapting, and creating businesses for a rapidly evolving world.",
-    image: "/photo8.webp",
   },
   {
     time: "04:30 PM",
@@ -78,14 +70,12 @@ const scheduleData = [
     miniTitle: "",
     desc: "Celebrating exceptional entrepreneurs, leaders, businesses, and achievements that inspire progress and create impact.",
     isGradient: true,
-    image: "/photo2.webp",
   },
   {
     time: "05:00 PM",
     title: <>CLOSING &<br />NETWORKING</>,
     miniTitle: "",
     desc: "Take the conversations beyond the summit. Connect, collaborate, and explore what comes next.",
-    image: "/photo3.webp",
   }
 ];
 
@@ -349,22 +339,13 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
               return (
                 <div key={num} className={styles.keynoteCard}>
                   <div className={styles.keynoteCardTop}>
-                    <div className={styles.keynoteRole}>UI/UX DESIGNER</div>
-                    <div className={styles.keynoteName}>MONISHWAR RAJASEKARAN</div>
-
-                    {/* Standard LinkedIn Icon using SVG */}
-                    <a href="#" className={styles.linkedinLink} aria-label="LinkedIn Profile">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.linkedinIcon}>
-                        <circle cx="12" cy="12" r="11" />
-                        <path d="M8 11v5" />
-                        <circle cx="8" cy="8" r="1" fill="currentColor" stroke="none" />
-                        <path d="M11 11v5" />
-                        <path d="M11 13a2 2 0 0 1 4 0v3" />
-                      </svg>
-                    </a>
+                    <div className={styles.keynoteRole}>SPEAKER</div>
+                    <div className={styles.keynoteName}>TO BE ANNOUNCED</div>
                   </div>
-                  <div className={styles.keynoteCardImage}>
-                    <Image src={`/photo${num > 4 ? num - 4 : num}.webp`} alt={`Speaker ${num}`} width={300} height={300} className={styles.keynotePhoto} style={{ objectFit: 'cover' }} />
+                  <div className={styles.keynoteCardImage} style={{ backgroundColor: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ color: '#444', fontSize: '1rem', letterSpacing: '4px', fontWeight: 500, textAlign: 'center', textTransform: 'uppercase' }}>
+                      Revealing<br />Soon
+                    </div>
                     <div className={styles.cardLogoOverlay}>
                       <Image src="/EC_logo.png" alt="EC Logo" width={120} height={32} style={{ objectFit: 'contain' }} className={styles.logoInvert} />
                     </div>
@@ -402,20 +383,13 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
             {[1, 2, 3, 4, 5, 6, 7].map((num) => (
               <div key={num} className={styles.panelCard}>
                 <div className={styles.panelCardTop}>
-                  <div className={styles.keynoteRole}>UI/UX DESIGNER</div>
-                  <div className={styles.keynoteName}>MONISHWAR RAJASEKARAN</div>
-                  <a href="#" className={styles.linkedinLink} aria-label="LinkedIn Profile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.linkedinIcon}>
-                      <circle cx="12" cy="12" r="11" />
-                      <path d="M8 11v5" />
-                      <circle cx="8" cy="8" r="1" fill="currentColor" stroke="none" />
-                      <path d="M11 11v5" />
-                      <path d="M11 13a2 2 0 0 1 4 0v3" />
-                    </svg>
-                  </a>
+                  <div className={styles.keynoteRole}>PANELIST</div>
+                  <div className={styles.keynoteName}>TO BE ANNOUNCED</div>
                 </div>
-                <div className={styles.panelCardImage}>
-                  <Image src={`/photo${num > 4 ? num - 4 : num}.webp`} alt={`Speaker ${num}`} width={300} height={300} className={styles.keynotePhoto} style={{ objectFit: 'cover' }} />
+                <div className={styles.panelCardImage} style={{ backgroundColor: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ color: '#444', fontSize: '0.9rem', letterSpacing: '3px', fontWeight: 500, textAlign: 'center', textTransform: 'uppercase' }}>
+                    Revealing<br />Soon
+                  </div>
                 </div>
               </div>
             ))}
@@ -440,20 +414,13 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
             {[1, 2, 3, 4, 5, 6, 7].map((num) => (
               <div key={`panel2-${num}`} className={styles.panelCard}>
                 <div className={styles.panelCardTop}>
-                  <div className={styles.keynoteRole}>UI/UX DESIGNER</div>
-                  <div className={styles.keynoteName}>MONISHWAR RAJASEKARAN</div>
-                  <a href="#" className={styles.linkedinLink} aria-label="LinkedIn Profile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.linkedinIcon}>
-                      <circle cx="12" cy="12" r="11" />
-                      <path d="M8 11v5" />
-                      <circle cx="8" cy="8" r="1" fill="currentColor" stroke="none" />
-                      <path d="M11 11v5" />
-                      <path d="M11 13a2 2 0 0 1 4 0v3" />
-                    </svg>
-                  </a>
+                  <div className={styles.keynoteRole}>PANELIST</div>
+                  <div className={styles.keynoteName}>TO BE ANNOUNCED</div>
                 </div>
-                <div className={styles.panelCardImage}>
-                  <Image src={`/photo${num > 4 ? num - 4 : num}.webp`} alt={`Speaker ${num}`} width={300} height={300} className={styles.keynotePhoto} style={{ objectFit: 'cover' }} />
+                <div className={styles.panelCardImage} style={{ backgroundColor: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ color: '#444', fontSize: '0.9rem', letterSpacing: '3px', fontWeight: 500, textAlign: 'center', textTransform: 'uppercase' }}>
+                    Revealing<br />Soon
+                  </div>
                 </div>
               </div>
             ))}
@@ -479,9 +446,9 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
                   <span className={`${scheduleStyles.scheduleRowTitle} ${item.isGradient ? scheduleStyles.gradientTitle : ''}`}>{item.title}</span>
                 </div>
                 <div className={scheduleStyles.scheduleRowDesc}>{item.desc}</div>
-                {item.image && (
-                  <img src={item.image} alt={`${item.time} Event`} className={scheduleStyles.scheduleRowImage} />
-                )}
+                <div className={`${scheduleStyles.scheduleRowImage} ${scheduleStyles.schedulePlaceholder}`}>
+                  Revealing<br />Soon
+                </div>
               </div>
             ))}
           </div>

@@ -69,7 +69,7 @@
 }
 
 .badgeGradient {
-  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  background: linear-gradient(90deg, #FF8800 0%, #3057D2 54.33%, #003DFF 100%);
   color: #fff;
   border: none;
 }
@@ -239,7 +239,7 @@
 }
 
 .btnGradient {
-  background: linear-gradient(90deg, #003DFF 0%, #3057D2 45.67%, #FF8800 100%);
+  background: linear-gradient(90deg, #FF8800 0%, #3057D2 54.33%, #003DFF 100%);
 }
 
 .btnBlue {
