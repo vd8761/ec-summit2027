@@ -159,15 +159,68 @@
 }
 
 @media (max-width: 768px) {
+  .topContainer {
+    padding: 30px 16px 24px;
+  }
+
+  .logoWrapper {
+    margin-bottom: 24px;
+    width: 160px;
+    height: 32px;
+  }
+
+  .nav {
+    gap: 12px 16px;
+    margin-bottom: 28px;
+    padding: 0 8px;
+  }
+
+  .navLink {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+
+  .titleWrapper {
+    flex-direction: column;
+  }
+
+  .millionaireSummit {
+    font-size: clamp(32px, 8.5vw, 64px);
+    margin-bottom: 4px;
+    margin-right: 0;
+  }
+  
+  .year {
+    font-size: clamp(32px, 8.5vw, 64px);
+  }
+
   .bottomBar {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 24px 16px 36px 16px;
   }
-  
-  .millionaireSummit {
-    margin-bottom: 12px; /* stack the year below on very small screens if it wraps */
-    margin-right: 0;
+
+  .bottomBarContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .bottomLeftGroup {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .bottomText {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .links {
+    justify-content: center;
+    gap: 8px;
   }
 }

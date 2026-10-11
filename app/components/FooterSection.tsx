@@ -67,7 +67,7 @@ export default function FooterSection() {
           
           <div className={styles.bottomLeftGroup}>
             <div className={styles.bottomText}>
-              ALL RIGHTS RESERVED @ EXECUTIVE COLOBORATION
+              ALL RIGHTS RESERVED @ EXECUTIVE COLLABORATION
             </div>
             <div className={styles.links}>
               <Link href="/privacy-policy" className={styles.bottomText}>PRIVACY POLICY</Link>

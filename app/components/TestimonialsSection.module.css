@@ -174,23 +174,53 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding: 40px 0;
+  }
+
   .container {
     flex-direction: column;
-    gap: 40px;
+    gap: 28px;
     min-height: auto;
+    padding: 0 20px;
+  }
+
+  .contentColumn {
+    order: 1;
+    padding: 0;
+    width: 100%;
   }
 
   .imageColumn {
-    width: 80%;
+    order: 2;
+    width: 100%;
+    max-width: 280px;
     margin: 0 auto;
     aspect-ratio: 4 / 5;
   }
 
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
   .quote {
-    font-size: 20px;
+    font-size: clamp(17px, 4.2vw, 22px);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .authorNavRow {
+    margin-bottom: 12px;
+  }
+
+  .progressBar {
+    margin-bottom: 20px;
   }
 
   .logosRow {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }

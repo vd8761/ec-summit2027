@@ -178,13 +178,72 @@
 }
 
 @media (max-width: 900px) {
+  .bannerWrapper {
+    padding: 40px 16px;
+    min-height: auto;
+  }
+
   .contentContainer {
     flex-direction: column;
     text-align: center;
-    gap: 60px;
+    gap: 32px;
   }
   
   .leftContent {
     align-items: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .rightContent {
+    align-items: center;
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .verticalDivider {
+    width: 80%;
+    height: 1px;
+    align-self: center;
+    margin: 16px 0;
+  }
+
+  .dayText {
+    margin-bottom: 0px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .dateNumber {
+    font-size: clamp(80px, 24vw, 150px);
+    line-height: 0.95;
+    margin: 4px 0 8px 0;
+  }
+
+  .monthYear {
+    font-size: clamp(16px, 4.5vw, 24px);
+    letter-spacing: 0.12em;
+    white-space: normal;
+  }
+
+  .timeText {
+    font-size: clamp(18px, 4.5vw, 26px);
+    margin-bottom: 16px;
+  }
+
+  .venueText {
+    font-size: clamp(14px, 3.5vw, 18px);
+    margin-bottom: 24px;
+  }
+
+  .divider {
+    margin-bottom: 24px;
+    width: 80%;
+    align-self: center;
+  }
+
+  .contactText {
+    font-size: clamp(12px, 3.2vw, 15px);
   }
 }

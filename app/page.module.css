@@ -60,8 +60,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
   .heroContent {
-    padding-top: 150px;
+    padding-top: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -1412,12 +1419,31 @@
   }
   .panelHeaderBlock {
     grid-column: span 2;
+    display: flex;
     flex-direction: column;
     text-align: left;
     align-items: flex-start;
+    padding: 32px 24px;
+    gap: 16px;
+  }
+  .panelNumber,
+  .panelHeaderTitle,
+  .panelHeaderDesc {
+    grid-column: auto;
+    width: 100%;
+    padding: 0;
+    white-space: normal;
+  }
+  .panelNumber {
+    font-size: clamp(60px, 8vw, 90px);
+    line-height: 1;
   }
   .panelHeaderTitle {
-    margin-bottom: 20px;
+    font-size: clamp(26px, 3.5vw, 40px);
+    margin-bottom: 0;
+  }
+  .panelHeaderDesc {
+    font-size: clamp(14px, 1.5vw, 18px);
   }
   .panelGrid > div:nth-child(4n + 1) {
     border-right: 1px solid rgba(0,0,0,0.2);
@@ -1426,12 +1452,65 @@
     border-right: none;
   }
 }
+
 @media (max-width: 768px) {
+  .main {
+    padding-bottom: 110px;
+  }
+  .panelSection {
+    padding: 60px 0;
+  }
   .panelGrid {
     grid-template-columns: 1fr;
+    margin-bottom: 40px;
   }
   .panelHeaderBlock {
     grid-column: span 1;
+    padding: 24px 20px;
+    gap: 12px;
+  }
+  .panelNumber {
+    font-size: clamp(48px, 14vw, 70px);
+  }
+  .panelHeaderTitle {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.15;
+  }
+  .panelHeaderDesc {
+    font-size: clamp(13px, 3.5vw, 15px);
+    line-height: 1.5;
+  }
+  .panelCardTop {
+    padding: 16px 20px;
+  }
+  .panelCardImage {
+    height: 220px;
+    aspect-ratio: auto;
+  }
+  .keynoteCardImage {
+    height: 240px;
+    aspect-ratio: auto;
+  }
+  .keynoteCardTop {
+    padding: 16px 20px;
+  }
+  .keynoteSection {
+    padding: 50px 0;
+  }
+  .speakersBannerContainer {
+    margin-bottom: 30px;
+    padding: 10px 0;
+  }
+  .speakersBannerText {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+  .gradientDot {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+  .speakersBannerItem {
+    padding-right: 20px;
   }
   .panelGrid > div:nth-child(n) {
     border-right: none;

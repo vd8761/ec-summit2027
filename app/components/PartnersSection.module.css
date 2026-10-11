@@ -108,3 +108,26 @@
   color: #003DFF; /* Blue */
   margin-left: 4px;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 16px;
+  }
+  .title {
+    margin-left: 0;
+    text-align: center;
+    font-size: clamp(20px, 5.5vw, 28px);
+    margin-bottom: 24px;
+  }
+  .card {
+    width: 170px;
+    height: 130px;
+    padding: 24px 14px;
+  }
+  .marqueeContainer {
+    gap: 14px;
+  }
+  .marqueeRow {
+    gap: 14px;
+  }
+}

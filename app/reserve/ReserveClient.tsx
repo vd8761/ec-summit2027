@@ -422,38 +422,38 @@ function ReserveContent({ config }: { config: any }) {
       {/* Left Column */}
       <div className={styles.leftColumn}>
         <div className={styles.contentWrapper}>
-          <div style={{ display: 'flex', gap: '8px', background: '#f5f5f5', padding: '6px', borderRadius: '12px', marginBottom: '32px' }}>
+          <div style={{ display: 'flex', gap: '6px', background: '#e8e8e8', padding: '4px', borderRadius: '12px', marginBottom: '28px', width: '100%' }}>
             {isDateExpired(config?.earlyBirdValidUntil) ? (
-              <div style={{ flex: 1, padding: '10px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#999', fontWeight: '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', opacity: 0.7, cursor: 'not-allowed' }}>
+              <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
                 Early Bird (Closed)
               </div>
             ) : (
               <Link href="?type=earlybird" style={{ flex: 1, textDecoration: 'none' }}>
-                <div style={{ padding: '10px', textAlign: 'center', borderRadius: '8px', background: type === 'earlybird' ? '#fff' : 'transparent', boxShadow: type === 'earlybird' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'earlybird' ? '#1034A6' : '#666', fontWeight: type === 'earlybird' ? '600' : '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', transition: 'all 0.2s' }}>
+                <div style={{ padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: type === 'earlybird' ? '#fff' : 'transparent', boxShadow: type === 'earlybird' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'earlybird' ? '#1034A6' : '#666', fontWeight: type === 'earlybird' ? '600' : '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', transition: 'all 0.2s', whiteSpace: 'nowrap' }}>
                   Early Bird
                 </div>
               </Link>
             )}
             
             {isDateExpired(config?.standardValidUntil) ? (
-              <div style={{ flex: 1, padding: '10px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#999', fontWeight: '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', opacity: 0.7, cursor: 'not-allowed' }}>
+              <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
                 Standard (Closed)
               </div>
             ) : (
               <Link href="?type=standard" style={{ flex: 1, textDecoration: 'none' }}>
-                <div style={{ padding: '10px', textAlign: 'center', borderRadius: '8px', background: type === 'standard' ? '#fff' : 'transparent', boxShadow: type === 'standard' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'standard' ? '#1034A6' : '#666', fontWeight: type === 'standard' ? '600' : '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', transition: 'all 0.2s' }}>
+                <div style={{ padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: type === 'standard' ? '#fff' : 'transparent', boxShadow: type === 'standard' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'standard' ? '#1034A6' : '#666', fontWeight: type === 'standard' ? '600' : '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', transition: 'all 0.2s', whiteSpace: 'nowrap' }}>
                   Standard
                 </div>
               </Link>
             )}
             
             {isDateExpired(config?.vipValidUntil) ? (
-              <div style={{ flex: 1, padding: '10px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#999', fontWeight: '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', opacity: 0.7, cursor: 'not-allowed' }}>
+              <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
                 VIP (Closed)
               </div>
             ) : (
               <Link href="?type=vip" style={{ flex: 1, textDecoration: 'none' }}>
-                <div style={{ padding: '10px', textAlign: 'center', borderRadius: '8px', background: type === 'vip' ? '#fff' : 'transparent', boxShadow: type === 'vip' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'vip' ? '#1034A6' : '#666', fontWeight: type === 'vip' ? '600' : '400', fontSize: '0.9rem', fontFamily: 'var(--font-geist)', transition: 'all 0.2s' }}>
+                <div style={{ padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: type === 'vip' ? '#fff' : 'transparent', boxShadow: type === 'vip' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'vip' ? '#1034A6' : '#666', fontWeight: type === 'vip' ? '600' : '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', transition: 'all 0.2s', whiteSpace: 'nowrap' }}>
                   VIP
                 </div>
               </Link>
@@ -563,7 +563,9 @@ export default function ReserveClient({ config }: { config: any }) {
             style={{ objectFit: "contain" }}
           />
         </Link>
-        <div className={styles.menuText}>MENU</div>
+        <Link href="/#passess" className={styles.menuText} style={{ textDecoration: 'none' }}>
+          MENU
+        </Link>
       </header>
 
       {/* Split Content Area inside Suspense boundary */}

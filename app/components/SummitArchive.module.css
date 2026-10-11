@@ -103,15 +103,45 @@
 }
 
 @media (max-width: 900px) {
-  .archiveContainer {
-    height: 600px;
+  .archiveSection {
+    padding: 40px 0 60px 0;
   }
-  .img1 { top: 5%; left: 5%; width: 30%; height: 15%; }
-  .img2 { top: 5%; right: 5%; width: 25%; height: 15%; }
-  .img3 { top: 30%; left: 2%; width: 20%; height: 35%; }
-  .img4 { display: none; }
-  .img5 { bottom: 10%; left: 25%; width: 30%; height: 20%; }
-  .img6 { display: none; }
-  .img7 { top: 40%; right: 5%; width: 30%; height: 40%; }
-  .img8 { display: none; }
+  .archiveContainer {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .centerText {
+    grid-column: span 2;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
+  }
+  .title {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+  .imgWrapper {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 160px !important;
+    border-radius: 8px;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  .img1 {
+    grid-column: span 2;
+    height: 200px !important;
+  }
+  .img6 {
+    grid-column: span 2;
+    height: 200px !important;
+  }
 }

@@ -401,36 +401,44 @@
 }
 
 @media (max-width: 900px) {
+  .topNavWrapper {
+    padding: 1rem 0;
+  }
   .navLinksWrapper {
     display: none; /* Hide full horizontal nav on mobile */
   }
   .burgerWrapper {
     display: flex;
   }
+  .bottomNav {
+    padding: 8px 0;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
   .countdownWrapper {
     position: relative;
     left: 0;
     transform: none;
     margin-right: 0;
-    gap: 8px;
+    gap: 6px;
   }
   .bottomNavContainer {
     justify-content: space-between;
-    padding: 0 12px;
-    gap: 8px;
+    padding: 0 10px;
+    gap: 6px;
   }
   .countdownLabel {
-    font-size: 8px !important;
+    font-size: 7.5px !important;
   }
   .countdownNumberDark, .countdownNumberGradient {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
   .securePassBtn {
-    padding: 10px 12px;
+    padding: 8px 10px;
     font-size: 10px !important;
     white-space: nowrap;
+    border-radius: 4px;
   }
   .countdownDivider {
-    height: 24px;
+    height: 20px;
   }
 }

@@ -286,18 +286,75 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 968px) {
+  .header {
+    height: 64px;
+    padding: 0 16px;
+  }
+
   .splitContent {
     flex-direction: column;
   }
   
   .leftColumn {
     max-width: 100%;
-    order: 2;
+    order: 1;
+    width: 100%;
+  }
+
+  .contentWrapper {
+    padding: 20px 16px 40px 16px;
   }
   
   .rightColumn {
-    max-width: 100%;
-    order: 1;
-    min-height: 50vh;
+    display: none;
+  }
+
+  .badges {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: clamp(36px, 9vw, 52px);
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .divider {
+    margin-bottom: 20px;
+  }
+
+  .form {
+    gap: 14px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .checkboxGroup {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .payButton {
+    padding: 14px;
+    font-size: 16px;
+    margin-bottom: 24px;
   }
 }
