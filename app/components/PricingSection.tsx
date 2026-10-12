@@ -48,53 +48,6 @@ export default function PricingSection({ config }: { config?: any }) {
       </div>
 
       <div className={styles.cardsContainer}>
-        {/* Early Bird Pass */}
-        <div className={`${styles.card} ${styles.cardEarlyBird} ${isEarlyBirdExpired ? styles.cardExpired : ''}`}>
-          <div className={styles.tagsRow}>
-            <span className={`${styles.tag} ${styles.tagBlue}`}>EARLY BIRD PASS</span>
-            {isEarlyBirdExpired ? (
-              <>
-                <div className={styles.tagDivider}></div>
-                <span className={`${styles.tag} ${styles.tagOutline}`}>CLOSED</span>
-              </>
-            ) : earlyBirdValidUntil ? (
-              <>
-                <div className={styles.tagDivider}></div>
-                <span className={`${styles.tag} ${styles.tagBlue}`}>VALID UNTIL {formatDate(earlyBirdValidUntil)}</span>
-              </>
-            ) : null}
-          </div>
-          
-          <h3 className={styles.price}>{earlyBirdPrice}</h3>
-          <p className={styles.priceSubtext}>Per person • Inclusive of all taxes</p>
-          
-          {isEarlyBirdExpired ? (
-            <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
-              Closed
-            </button>
-          ) : (
-            <Link href="/reserve?type=earlybird" style={{ width: '100%' }}>
-              <button className={`${styles.reserveBtn} ${styles.btnBlue}`}>
-                Apply now
-              </button>
-            </Link>
-          )}
-          
-          <div className={styles.featuresDivider}></div>
-          <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
-          <ul className={styles.featuresList}>
-            <li className={styles.featureItem}>
-              <CheckIcon /> Full event access
-            </li>
-            <li className={styles.featureItem}>
-              <CheckIcon /> Networking sessions
-            </li>
-            <li className={styles.featureItem}>
-              <CheckIcon /> Refreshments
-            </li>
-          </ul>
-        </div>
-
         {/* Standard Pass */}
         <div className={`${styles.card} ${styles.cardStandard}`}>
           <div className={styles.tagsRow}>
@@ -112,7 +65,10 @@ export default function PricingSection({ config }: { config?: any }) {
             ) : null}
           </div>
           
-          <h3 className={styles.price}>{standardPrice}</h3>
+          <div className={styles.priceContainer}>
+            <span className={styles.originalPrice}>₹10,000</span>
+            <span className={styles.offerPrice}>₹5,000</span>
+          </div>
           <p className={styles.priceSubtext}>Per person • Inclusive of all taxes</p>
           
           {isStandardExpired ? (
@@ -131,13 +87,49 @@ export default function PricingSection({ config }: { config?: any }) {
           <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
           <ul className={styles.featuresList}>
             <li className={styles.featureItem}>
+              <CheckIcon /> Standard Seating with delegated
+            </li>
+            <li className={styles.featureItem}>
               <CheckIcon /> Full event access
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon /> Networking sessions
+              <CheckIcon /> Hi-Tea Networking
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon /> Refreshments
+              <CheckIcon /> Business Lunch
+            </li>
+          </ul>
+        </div>
+
+        {/* Executive Round Table Pass */}
+        <div className={`${styles.card} ${styles.cardExecutive} ${styles.cardExpired}`}>
+          <div className={styles.tagsRow}>
+            <span className={`${styles.tag} ${styles.tagOutline}`}>EXECUTIVE ROUND TABLE PASS</span>
+            <div className={styles.tagDivider}></div>
+            <span className={`${styles.tag} ${styles.tagOutline}`}>SOLD OUT</span>
+          </div>
+          
+          <h3 className={styles.price} style={{ color: '#888' }}>SOLD OUT</h3>
+          <p className={styles.priceSubtext}>Per person • Exclusive round table access</p>
+          
+          <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
+            Sold Out
+          </button>
+          
+          <div className={styles.featuresDivider}></div>
+          <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
+          <ul className={styles.featuresList}>
+            <li className={styles.featureItem}>
+              <CheckIcon /> Round table seating millionaires, awardees & executives collaboration members closer
+            </li>
+            <li className={styles.featureItem}>
+              <CheckIcon /> Full event access + Executives Networking Access
+            </li>
+            <li className={styles.featureItem}>
+              <CheckIcon /> Hi-tea networking
+            </li>
+            <li className={styles.featureItem}>
+              <CheckIcon /> Business Lunch
             </li>
           </ul>
         </div>
@@ -181,19 +173,22 @@ export default function PricingSection({ config }: { config?: any }) {
           )}
           
           <div className={styles.featuresDivider}></div>
-          <h4 className={styles.featuresTitle}>INCLUDES EVERYTHING IN STANDARD PLAN +</h4>
+          <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
           <ul className={styles.featuresList}>
             <li className={styles.featureItem}>
-              <CheckIcon gradient /> VIP Priority seating
+              <CheckIcon gradient /> VIP Seating with Speakers, Panelists, & Distinguished Guest
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon gradient /> Meet & greet
+              <CheckIcon gradient /> Full event access + VIP Networking Access
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon gradient /> All Standard benefits
+              <CheckIcon gradient /> Hi-Tea Networking
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon gradient /> Hoodies and bags
+              <CheckIcon gradient /> Business Lunch
+            </li>
+            <li className={styles.featureItem}>
+              <CheckIcon gradient /> Special Attender Appointed To Serve Your Needs
             </li>
           </ul>
         </div>

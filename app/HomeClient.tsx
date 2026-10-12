@@ -12,6 +12,7 @@ import ArchiveSection from "./components/ArchiveSection";
 import EventBannerSection from "./components/EventBannerSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
+import SeatLayoutSection from "./components/SeatLayoutSection";
 import PartnersSection from "./components/PartnersSection";
 import FooterSection from "./components/FooterSection";
 
@@ -77,6 +78,65 @@ const scheduleData = [
     miniTitle: "",
     desc: "Take the conversations beyond the summit. Connect, collaborate, and explore what comes next.",
   }
+];
+
+const speakersData = [
+  {
+    name: "MS. APARNA THYAGARAJAN",
+    role: "KEYNOTE SPEAKER",
+    designation: "Co-Founder & Chief Product Officer",
+    company: "Shobitam, Inc",
+    image: "/speakers/Aparna_Thyagarajan.png",
+  },
+  {
+    name: "MR. L. T. ANAND",
+    role: "KEYNOTE SPEAKER",
+    designation: "M.D & CEO",
+    company: "SSPLT10, Royal Peacocks League Limited",
+    image: "/speakers/LT_Anand.png",
+  },
+  {
+    name: "MR. KISHORE CHANDRAN",
+    role: "KEYNOTE SPEAKER",
+    designation: "Founder & President",
+    company: "Dr. Kalam Foundation",
+    image: "/speakers/MR_Kishore_Chandran.png",
+  },
+  {
+    name: "MR. MANICKAVASAGAM",
+    role: "KEYNOTE SPEAKER",
+    designation: "Director",
+    company: "RmKV Silks",
+    image: "/speakers/MR_Manikavasagam.png",
+  },
+  {
+    name: "TO BE ANNOUNCED",
+    role: "SPEAKER",
+    designation: "Visionary Leader",
+    company: "Revealing Soon",
+    image: null,
+  },
+  {
+    name: "TO BE ANNOUNCED",
+    role: "SPEAKER",
+    designation: "Visionary Leader",
+    company: "Revealing Soon",
+    image: null,
+  },
+  {
+    name: "TO BE ANNOUNCED",
+    role: "SPEAKER",
+    designation: "Visionary Leader",
+    company: "Revealing Soon",
+    image: null,
+  },
+  {
+    name: "TO BE ANNOUNCED",
+    role: "SPEAKER",
+    designation: "Visionary Leader",
+    company: "Revealing Soon",
+    image: null,
+  },
 ];
 
 export default function Home({ pricingConfig }: { pricingConfig?: any }) {
@@ -335,19 +395,37 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
         {/* Speakers Grid */}
         <div className={styles.keynoteContainer}>
           <div className={styles.speakersGrid}>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
+            {speakersData.map((speaker, index) => {
               return (
-                <div key={num} className={styles.keynoteCard}>
+                <div key={index} className={styles.keynoteCard}>
                   <div className={styles.keynoteCardTop}>
-                    <div className={styles.keynoteRole}>SPEAKER</div>
-                    <div className={styles.keynoteName}>TO BE ANNOUNCED</div>
+                    <div className={styles.keynoteRole}>{speaker.role}</div>
+                    <div className={styles.keynoteName}>{speaker.name}</div>
+                    {speaker.designation && (
+                      <div className={styles.keynoteDesignation}>{speaker.designation}</div>
+                    )}
+                    {speaker.company && (
+                      <div className={styles.keynoteCompany}>{speaker.company}</div>
+                    )}
                   </div>
-                  <div className={styles.keynoteCardImage} style={{ backgroundColor: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ color: '#444', fontSize: '1rem', letterSpacing: '4px', fontWeight: 500, textAlign: 'center', textTransform: 'uppercase' }}>
-                      Revealing<br />Soon
-                    </div>
+                  <div
+                    className={styles.keynoteCardImage}
+                    style={!speaker.image ? { backgroundColor: '#0a0a0a', display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}
+                  >
+                    {speaker.image ? (
+                      <Image
+                        src={speaker.image}
+                        alt={speaker.name}
+                        fill
+                        className={styles.keynotePhoto}
+                      />
+                    ) : (
+                      <div style={{ color: '#444', fontSize: '1rem', letterSpacing: '4px', fontWeight: 500, textAlign: 'center', textTransform: 'uppercase' }}>
+                        Revealing<br />Soon
+                      </div>
+                    )}
                     <div className={styles.cardLogoOverlay}>
-                      <Image src="/EC_logo.png" alt="EC Logo" width={120} height={32} style={{ objectFit: 'contain' }} className={styles.logoInvert} />
+                      <Image src="/EC_logo.png" alt="EC Logo" width={130} height={36} style={{ objectFit: 'contain' }} className={styles.logoInvert} />
                     </div>
                   </div>
                 </div>
@@ -461,17 +539,19 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
 
       <PricingSection config={pricingConfig} />
 
+      <SeatLayoutSection />
+
       <EventBannerSection />
 
       <PartnersSection />
 
       <FooterSection />
 
-      <ModalVideo 
-        channel='youtube' 
-        isOpen={isVideoOpen} 
-        videoId="ZDXvlawsykE" 
-        onClose={() => setIsVideoOpen(false)} 
+      <ModalVideo
+        channel='youtube'
+        isOpen={isVideoOpen}
+        videoId="ZDXvlawsykE"
+        onClose={() => setIsVideoOpen(false)}
         youtube={{ rel: 0, autoplay: 1 }}
       />
     </main>

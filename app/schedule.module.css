@@ -41,7 +41,7 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 20% 35% 45%;
-  padding: clamp(24px, 3vw, 50px) clamp(250px, 30vw, 450px) clamp(24px, 3vw, 50px) 24px;
+  padding: clamp(20px, 2.5vw, 40px) clamp(180px, 18vw, 280px) clamp(20px, 2.5vw, 40px) 24px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   background: transparent;
   transition: color 0.3s ease;
@@ -124,17 +124,19 @@
 
 .scheduleRowImage {
   position: absolute;
-  right: clamp(0px, 2vw, 40px);
+  right: clamp(16px, 2vw, 40px);
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(220px, 23.2vw, 446px);
-  height: clamp(260px, 27vw, 519px);
+  width: clamp(150px, 13vw, 220px);
+  height: clamp(190px, 17vw, 280px);
   object-fit: cover;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
   transition: opacity 0.3s ease;
   z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .scheduleRow:hover .scheduleTime,
@@ -194,10 +196,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
+  color: #555;
   font-family: var(--font-geist);
-  font-size: clamp(14px, 1.2vw, 24px);
-  letter-spacing: 4px;
+  font-size: clamp(11px, 0.9vw, 15px);
+  letter-spacing: 3px;
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;

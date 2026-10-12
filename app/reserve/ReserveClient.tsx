@@ -80,11 +80,12 @@ const getPassData = (config: any) => {
 
 function ReserveContent({ config }: { config: any }) {
   const searchParams = useSearchParams();
-  const type = searchParams.get("type") || "vip";
-
+  const rawType = searchParams.get("type");
   const passData = getPassData(config);
-  // Type casting ensures we fall back to 'vip' if an invalid type is passed
-  const data = (passData as any)[type] || passData["vip"];
+  const type = (rawType === "earlybird" || !rawType || !(rawType in passData)) ? "standard" : rawType;
+
+  // Type casting ensures we fall back to 'standard' if an invalid type is passed
+  const data = (passData as any)[type] || passData["standard"];
 
   const checkIsExpired = (passType: string) => {
     let validUntil = null;
@@ -423,18 +424,6 @@ function ReserveContent({ config }: { config: any }) {
       <div className={styles.leftColumn}>
         <div className={styles.contentWrapper}>
           <div style={{ display: 'flex', gap: '6px', background: '#e8e8e8', padding: '4px', borderRadius: '12px', marginBottom: '28px', width: '100%' }}>
-            {isDateExpired(config?.earlyBirdValidUntil) ? (
-              <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
-                Early Bird (Closed)
-              </div>
-            ) : (
-              <Link href="?type=earlybird" style={{ flex: 1, textDecoration: 'none' }}>
-                <div style={{ padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: type === 'earlybird' ? '#fff' : 'transparent', boxShadow: type === 'earlybird' ? '0 2px 8px rgba(0,0,0,0.08)' : 'none', color: type === 'earlybird' ? '#1034A6' : '#666', fontWeight: type === 'earlybird' ? '600' : '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', transition: 'all 0.2s', whiteSpace: 'nowrap' }}>
-                  Early Bird
-                </div>
-              </Link>
-            )}
-            
             {isDateExpired(config?.standardValidUntil) ? (
               <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
                 Standard (Closed)
@@ -446,6 +435,10 @@ function ReserveContent({ config }: { config: any }) {
                 </div>
               </Link>
             )}
+
+            <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
+              Executive Round Table (Sold Out)
+            </div>
             
             {isDateExpired(config?.vipValidUntil) ? (
               <div style={{ flex: 1, padding: '10px 4px', textAlign: 'center', borderRadius: '8px', background: 'transparent', color: '#888', fontWeight: '400', fontSize: 'clamp(0.75rem, 2.5vw, 0.88rem)', fontFamily: 'var(--font-geist)', opacity: 0.75, cursor: 'not-allowed', whiteSpace: 'nowrap' }}>
@@ -468,7 +461,14 @@ function ReserveContent({ config }: { config: any }) {
             ))}
           </div>
 
-          <div className={styles.price}>{data.price}</div>
+          {type === 'standard' ? (
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '12px', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: 'var(--font-geist)', fontSize: 'clamp(24px, 2.5vw, 42px)', color: '#888', textDecoration: 'line-through', fontWeight: '400' }}>₹10,000</span>
+              <span style={{ fontFamily: 'var(--font-geist)', fontSize: 'clamp(48px, 4.68vw, 90px)', color: '#1034A6', fontWeight: '600', lineHeight: 1 }}>{data.price}</span>
+            </div>
+          ) : (
+            <div className={styles.price}>{data.price}</div>
+          )}
           <div className={styles.subtitle}>Per person • Inclusive of all taxes</div>
 
           <div className={styles.divider}></div>
