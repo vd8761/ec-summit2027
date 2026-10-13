@@ -214,8 +214,9 @@
 .priceContainer {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 4px;
+  flex-wrap: wrap;
 }
 
 .urgencyNotice {
@@ -293,28 +294,31 @@
 
 .originalPrice {
   font-family: var(--font-geist);
-  font-size: clamp(24px, 2.5vw, 42px);
+  font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 400;
   color: #888888;
   text-decoration: line-through;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .offerPrice {
   font-family: var(--font-geist);
-  font-size: clamp(40px, 4.5vw, 81px);
+  font-size: clamp(34px, 3.2vw, 52px);
   font-weight: 600;
   color: #1034A6;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .price {
   font-family: var(--font-geist);
-  font-size: clamp(40px, 4.5vw, 81px);
+  font-size: clamp(36px, 3.5vw, 56px);
   font-weight: 500;
   color: #000;
   margin: 0 0 4px 0;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .priceSubtext {
@@ -423,6 +427,15 @@
     max-width: 420px;
     padding: 36px 28px;
   }
+  .originalPrice {
+    font-size: clamp(20px, 1.8vw, 26px);
+  }
+  .offerPrice {
+    font-size: clamp(38px, 3.4vw, 56px);
+  }
+  .price {
+    font-size: clamp(40px, 3.6vw, 60px);
+  }
 }
 
 /* ── 1024px : Small Laptop / Large Tablet Landscape ─────── */
@@ -439,10 +452,10 @@
   }
   .offerPrice,
   .price {
-    font-size: clamp(48px, 7vw, 72px);
+    font-size: clamp(38px, 5vw, 54px);
   }
   .originalPrice {
-    font-size: clamp(26px, 3.5vw, 40px);
+    font-size: clamp(20px, 2.5vw, 26px);
   }
 }
 
@@ -468,10 +481,10 @@
   }
   .offerPrice,
   .price {
-    font-size: clamp(40px, 9vw, 60px);
+    font-size: clamp(34px, 6vw, 46px);
   }
   .originalPrice {
-    font-size: clamp(22px, 5vw, 34px);
+    font-size: clamp(18px, 3vw, 24px);
   }
   .priceSubtext {
     font-size: clamp(13px, 3vw, 16px);
@@ -531,10 +544,10 @@
   }
   .offerPrice,
   .price {
-    font-size: clamp(36px, 10vw, 52px);
+    font-size: clamp(30px, 7vw, 42px);
   }
   .originalPrice {
-    font-size: clamp(18px, 5.5vw, 28px);
+    font-size: clamp(16px, 3.5vw, 22px);
   }
   .priceSubtext {
     font-size: 13px;
@@ -608,10 +621,10 @@
   }
   .offerPrice,
   .price {
-    font-size: clamp(30px, 12vw, 44px);
+    font-size: clamp(26px, 8vw, 36px);
   }
   .originalPrice {
-    font-size: clamp(16px, 6vw, 22px);
+    font-size: clamp(15px, 4vw, 19px);
   }
   .priceSubtext {
     font-size: 12px;

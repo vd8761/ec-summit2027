@@ -20,7 +20,7 @@ export default function PricingSection({ config }: { config?: any }) {
   const standardValidUntil = config?.standardValidUntil && config.standardValidUntil !== 'NIL' ? config.standardValidUntil : null;
   const vipValidUntil = config?.vipValidUntil && config.vipValidUntil !== 'NIL' ? config.vipValidUntil : null;
   
-  const vipSpotsLeft = config?.vipSpotsLeft || "10";
+  const vipSpotsLeft = config?.vipSpotsLeft || "19";
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -69,7 +69,7 @@ export default function PricingSection({ config }: { config?: any }) {
           
           <div className={styles.priceContainer}>
             <span className={styles.originalPrice}>₹10,000</span>
-            <span className={styles.offerPrice}>₹5,000</span>
+            <span className={styles.offerPrice}>{earlyBirdPrice}</span>
           </div>
           <p className={styles.priceSubtext}>Per person • Inclusive of all taxes</p>
           
@@ -109,7 +109,7 @@ export default function PricingSection({ config }: { config?: any }) {
               <span className={styles.earlyBirdDiscount}>SAVE 50%</span>
             </div>
             <p className={styles.earlyBirdBoxDesc}>
-              Seats filling fast! Grab the <strong>₹5,000</strong> early bird rate before it increases to <strong>₹10,000</strong>.
+              Seats filling fast! Grab the <strong>{earlyBirdPrice}</strong> early bird rate before it increases to <strong>₹10,000</strong>.
             </p>
           </div>
         </div>
