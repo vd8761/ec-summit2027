@@ -19,7 +19,7 @@ export default function PricingSection({ config }: { config?: any }) {
   const earlyBirdValidUntil = config?.earlyBirdValidUntil && config.earlyBirdValidUntil !== 'NIL' ? config.earlyBirdValidUntil : null;
   const standardValidUntil = config?.standardValidUntil && config.standardValidUntil !== 'NIL' ? config.standardValidUntil : null;
   const vipValidUntil = config?.vipValidUntil && config.vipValidUntil !== 'NIL' ? config.vipValidUntil : null;
-  
+
   const vipSpotsLeft = config?.vipSpotsLeft || "19";
 
   const formatDate = (dateString: string) => {
@@ -66,13 +66,13 @@ export default function PricingSection({ config }: { config?: any }) {
               </>
             ) : null}
           </div>
-          
+
           <div className={styles.priceContainer}>
             <span className={styles.originalPrice}>₹10,000</span>
             <span className={styles.offerPrice}>{earlyBirdPrice}</span>
           </div>
           <p className={styles.priceSubtext}>Per person • Inclusive of all taxes</p>
-          
+
           {isStandardExpired ? (
             <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
               Closed
@@ -84,7 +84,7 @@ export default function PricingSection({ config }: { config?: any }) {
               </button>
             </Link>
           )}
-          
+
           <div className={styles.featuresDivider}></div>
           <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
           <ul className={styles.featuresList}>
@@ -133,14 +133,14 @@ export default function PricingSection({ config }: { config?: any }) {
             <div className={styles.tagDivider}></div>
             <span className={`${styles.tag} ${styles.tagOutline}`}>SOLD OUT</span>
           </div>
-          
+
           <h3 className={styles.price} style={{ color: '#888' }}>₹12,000</h3>
           <p className={styles.priceSubtext}>Per person • Exclusive round table access</p>
-          
+
           <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
             Sold Out
           </button>
-          
+
           <div className={styles.featuresDivider}></div>
           <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
           <ul className={styles.featuresList}>
@@ -151,7 +151,7 @@ export default function PricingSection({ config }: { config?: any }) {
               <CheckIcon /> Full event access + Executives Networking Access
             </li>
             <li className={styles.featureItem}>
-              <CheckIcon /> Hi-tea networking
+              <CheckIcon /> Hi-Tea Networking
             </li>
             <li className={styles.featureItem}>
               <CheckIcon /> Business Lunch
@@ -181,10 +181,10 @@ export default function PricingSection({ config }: { config?: any }) {
               </>
             ) : null}
           </div>
-          
+
           <h3 className={styles.price}>{vipPrice}</h3>
           <p className={styles.priceSubtext}>Per person • Inclusive of all taxes</p>
-          
+
           {isVipExpired ? (
             <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
               Closed
@@ -196,7 +196,7 @@ export default function PricingSection({ config }: { config?: any }) {
               </button>
             </Link>
           )}
-          
+
           <div className={styles.featuresDivider}></div>
           <h4 className={styles.featuresTitle}>WHAT&apos;S INCLUDED</h4>
           <ul className={styles.featuresList}>

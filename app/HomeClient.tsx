@@ -19,51 +19,59 @@ import FooterSection from "./components/FooterSection";
 const scheduleData = [
   {
     time: "08:00 AM",
-    title: <>REGISTRATION &<br />NETWORKING</>,
+    title: <>REGISTRATION &<br />Hi-Tea NETWORKING</>,
     miniTitle: "",
     desc: "Exploring how a new generation of entrepreneurs is redefining growth, innovation, leadership, and success.",
+    image: "/schedule/01_registration.jpg",
   },
   {
     time: "09:00 AM",
     title: <>OPENING<br />CEREMONY</>,
     miniTitle: "",
     desc: <>Welcome to the <strong>Millionaire Summit & Awards.</strong> Setting the stage for a day of ideas, conversations, and possibilities.</>,
+    image: "/schedule/02_opening_ceremony.jpg",
   },
   {
     time: "09:30 AM",
     title: <>KEYNOTE<br />SESSION</>,
     miniTitle: "",
     desc: "Hear from a visionary leader on ambition, leadership, innovation, and building businesses that create lasting impact.",
+    image: "/schedule/03_keynote_session.jpg",
   },
   {
     time: "10:30 AM",
     title: <>THE FUTURE<br />OF BUSINESS</>,
     miniTitle: "Executive Panel Discussion",
     desc: "A powerful conversation exploring growth, leadership, innovation, investment, and the forces shaping tomorrow's businesses.",
+    image: "/schedule/04_future_panel.jpg",
   },
   {
     time: "12:00 PM",
     title: <>EXECUTIVE<br />NETWORKING</>,
     miniTitle: "",
     desc: "Connect with entrepreneurs, founders, investors, and industry leaders in an environment built for meaningful conversations.",
+    image: "/schedule/05_executive_networking.jpg",
   },
   {
     time: "01:00 PM",
-    title: <>NETWORKING<br />LUNCH</>,
+    title: <>BUSINESS LUNCH &<br />NETWORKING</>,
     miniTitle: "",
     desc: "An opportunity to continue conversations, exchange ideas, and build valuable relationships over lunch.",
+    image: "/schedule/06_business_lunch.jpg",
   },
   {
     time: "02:30 PM",
     title: <>STRATEGIC<br />CONVERSATIONS</>,
     miniTitle: "",
     desc: "Exploring new perspectives, emerging opportunities, and the decisions shaping the future of business.",
+    image: "/schedule/07_strategic_conversations.jpg",
   },
   {
     time: "03:30 PM",
     title: <>THE NEW AGE OF<br />ENTREPRENEURSHIP</>,
     miniTitle: "Executive Panel Discussion",
     desc: "A conversation on building, scaling, adapting, and creating businesses for a rapidly evolving world.",
+    image: "/schedule/08_entrepreneurship_panel.jpg",
   },
   {
     time: "04:30 PM",
@@ -71,12 +79,14 @@ const scheduleData = [
     miniTitle: "",
     desc: "Celebrating exceptional entrepreneurs, leaders, businesses, and achievements that inspire progress and create impact.",
     isGradient: true,
+    image: "/schedule/09_millionaire_awards.jpg",
   },
   {
     time: "05:00 PM",
     title: <>CLOSING &<br />NETWORKING</>,
     miniTitle: "",
     desc: "Take the conversations beyond the summit. Connect, collaborate, and explore what comes next.",
+    image: "/schedule/10_closing_networking.jpg",
   }
 ];
 
@@ -524,9 +534,21 @@ export default function Home({ pricingConfig }: { pricingConfig?: any }) {
                   <span className={`${scheduleStyles.scheduleRowTitle} ${item.isGradient ? scheduleStyles.gradientTitle : ''}`}>{item.title}</span>
                 </div>
                 <div className={scheduleStyles.scheduleRowDesc}>{item.desc}</div>
-                <div className={`${scheduleStyles.scheduleRowImage} ${scheduleStyles.schedulePlaceholder}`}>
-                  Revealing<br />Soon
-                </div>
+                {item.image ? (
+                  <div className={scheduleStyles.scheduleRowImage}>
+                    <Image
+                      src={item.image}
+                      alt="Event Schedule Session"
+                      fill
+                      sizes="(max-width: 900px) 0vw, 240px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                ) : (
+                  <div className={`${scheduleStyles.scheduleRowImage} ${scheduleStyles.schedulePlaceholder}`}>
+                    Revealing<br />Soon
+                  </div>
+                )}
               </div>
             ))}
           </div>

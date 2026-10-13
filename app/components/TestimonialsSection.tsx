@@ -25,32 +25,32 @@ const testimonialsData = [
     type: "youtube",
     videoId: "EzS44lZLXjc",
     quote: "Bootstrapping a startup from ₹20 Lakhs to a $10M–$12M enterprise requires shifting your strategy as technology evolves.\n\nWhen scaling a tech business, technical capability gets you started, but client relationship alignment drives sustainable growth. Understanding your client’s core business vision and goals is what transforms a simple service provider into a long-term strategic partner.\n\nAs the industry matures, the balance between technical development and strategic sales shifts dramatically. Scaling to an international level depends on building dedicated global sales teams that can communicate value, connect solutions to business outcomes, and maintain client trust.",
-    authorName: "SPEAKER THREE",
-    authorTitle: "Tech Founder"
+    authorName: "HADLEY JONES",
+    authorTitle: "Founder of Hadley Jones Academy"
   },
   {
     id: 4,
     type: "instagram",
     videoId: "DcxD6hmTX5C",
     quote: "You can’t scale a business past your own limits—unless you build a team that is smarter than you.\n\nTo transition from an individual contributor to a true leader, you must step beyond single-handed execution. Relying solely on your personal skills caps your capacity and limits your growth. Scaling a business requires a fundamental mindset shift: trading personal ego for organizational security.\n\nReal leadership begins when you hire talent that exceeds your own capabilities across marketing, technology, and operations. Surrounding yourself with experts who complement your skill set unlocks sustainable, long-term growth.",
-    authorName: "SPEAKER FOUR",
-    authorTitle: "Leadership & Strategy"
+    authorName: "SHAILESH KANTAK",
+    authorTitle: "Leadership & Scaling Coach"
   },
   {
     id: 5,
     type: "instagram",
     videoId: "Dc7XFi2BdZp",
-    quote: "Protecting the soul of a brand means prioritizing impact over quick expansion.\n\nWhen scale threatens purpose, true leaders choose to safeguard their core vision. In this discussion from the Executives Collaboration Millionaire Summit, the speaker highlights how preserving traditional artisan heritage takes precedence over rapid growth.\n\nFor many traditional weaving families, younger generations often turn away from artisan crafts due to a perceived lack of social respect or economic stability. Rather than chasing volume, true disruption comes from transforming this industry narrative—ensuring artisans lead a life of dignity while acting as genuine custodians of cultural heritage.",
-    authorName: "SPEAKER FIVE",
-    authorTitle: "Conscious Entrepreneurship"
+    quote: "Protecting the soul of a brand means prioritizing impact over quick expansion.\n\nWhen scale threatens purpose, true leaders choose to safeguard their core vision. In this discussion from the Executives Collaboration Millionaire Summit, Aparna Thyagarajan highlights how preserving traditional artisan heritage takes precedence over rapid growth.\n\nFor many traditional weaving families, younger generations often turn away from artisan crafts due to a perceived lack of social respect or economic stability. Rather than chasing volume, true disruption comes from transforming this industry narrative—ensuring artisans lead a life of dignity while acting as genuine custodians of cultural heritage.",
+    authorName: "APARNA THYAGARAJAN",
+    authorTitle: "Shobitham"
   },
   {
     id: 6,
     type: "youtube",
     videoId: "_kBOtZ5ye0I",
     quote: "Failing to protect your brand identity early can cost you your market dominance.\n\nWhen scaling an innovative product, product validation is only half the battle—protecting your Intellectual Property (IP) and brand trademark is critical. In the early stages, skipping proper legal advisory and failing to register IP leads straight into the “Copycat Trap.” When competitors realize a business model is profitable, unbranded products get genericized and copied across the market.\n\nTo stand out from identical market options, building strong brand positioning under a registered identity like Aaladipattiyan establishes immediate recall. Establishing a trademarked signature menu item—such as Karupatti Coffee—turns a generic commodity into a high-margin brand asset.",
-    authorName: "SPEAKER SIX",
-    authorTitle: "Aaladipattiyan Karupatti Coffee"
+    authorName: "RICHARD K YUSUF",
+    authorTitle: "Samy Jose Boxing & Fitness Academy"
   },
   {
     id: 7,
@@ -106,14 +106,6 @@ const testimonialsData = [
     videoId: "DcFSZOhzyKA",
     quote: "Unlocking Authentic Leadership & Building Global Business Networks!\n\nGreat leaders don’t just build businesses—they create legacies that inspire future generations! Hear from Lokesh Rajendra Babu as he shares his experience attending the Millionaire Summit & Awards 2026.\n\nHe noted that the highlight of the summit was the series of deep, insightful panel discussions. These conversations shed light on what true leadership entails and why building a sustainable legacy is crucial for every growing enterprise today.",
     authorName: "LOKESH RAJENDRA BABU",
-    authorTitle: "Entrepreneur"
-  },
-  {
-    id: 14,
-    type: "instagram",
-    videoId: "DcDTJW0h8nC",
-    quote: "A lot of small community meetings and business meetings are booming right now. To enhance the meeting with crisp reach and punchy delivery, 3 adjustments can practically improve your meeting quality.\n\nNo more hearing muffled voices or unclear speeches. First, have great quality speakers. Second, make sure the microphone is from a branded company. Third, a mixer is a must to equalise the voice control.\n\nThese practical tips ensure entrepreneurs and businesses can plan and execute internal meetings with the highest professional quality.",
-    authorName: "SPEAKER FOURTEEN",
     authorTitle: "Entrepreneur"
   },
   {
@@ -224,9 +216,9 @@ const testimonialsData = [
     id: 28,
     type: "instagram",
     videoId: "DbhPOeCKIWz",
-    quote: "What happens when visionary leadership meets grassroots determination?\n\nReflecting on his experience at the Millionaires Summit & Awards 2026, a panelist shares what makes this platform truly unique. Moving far beyond traditional business events, this initiative is actively shining a spotlight on real entrepreneurs from Tier 2 and Tier 3 cities who are making a genuine, lasting impact in their communities.\n\nDrawing inspiration from Dr. A.P.J. Abdul Kalam’s visionary ethos, platforms that recognize grassroots changemakers and regional founders are building the true foundation for global economic growth.",
-    authorName: "PANELIST",
-    authorTitle: "Entrepreneur"
+    quote: "What happens when visionary leadership meets grassroots determination?\n\nReflecting on his experience at the Millionaires Summit & Awards 2026, Balaji Venkatarathinam, Director of SolidPro Group, shares what makes this platform truly unique. Moving far beyond traditional business events, this initiative is actively shining a spotlight on real entrepreneurs from Tier 2 and Tier 3 cities who are making a genuine, lasting impact in their communities.\n\nDrawing inspiration from Dr. A.P.J. Abdul Kalam’s visionary ethos, platforms that recognize grassroots changemakers and regional founders are building the true foundation for global economic growth.",
+    authorName: "BALAJI VENKATARATHINAM",
+    authorTitle: "Director of SolidPro Group"
   },
   {
     id: 29,

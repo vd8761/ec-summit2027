@@ -6,22 +6,29 @@ interface Partner {
   id: string;
   name: string;
   logoPath: string;
+  wrapperClass: string;
 }
 
 const partners: Partner[] = [
-  { id: 'meta', name: 'Meta', logoPath: '/meta.png' },
-  { id: 'cocacola', name: 'Coca-Cola', logoPath: '/cocacola_nb.png' },
-  { id: 'zoho', name: 'Zoho', logoPath: '/zoho_nb.png' },
-  { id: 'mckinsey', name: 'McKinsey & Company', logoPath: '/mckc_nb.png' },
-  { id: 'tesla', name: 'Tesla', logoPath: '/tesl_nb.png' },
-  { id: 'tcs', name: 'TCS', logoPath: '/tcs_nb.png' },
-  { id: 'ibm', name: 'IBM', logoPath: '/ibm_nb.png' },
-  { id: 'apple', name: 'Apple', logoPath: '/apple_nb.png' },
-  { id: 'microsoft', name: 'Microsoft', logoPath: '/microsoft_nb.png' },
+  {
+    id: 'vgro',
+    name: 'VGRO Global Finser',
+    logoPath: '/vgro_global_finser_pvt_ltd_logo.webp',
+    wrapperClass: styles.wrapperVgro,
+  },
+  {
+    id: 'contus',
+    name: 'Contus Tech',
+    logoPath: '/contus_logo.webp',
+    wrapperClass: styles.wrapperContus,
+  },
+  {
+    id: 'solidpro',
+    name: 'Solidpro',
+    logoPath: '/headr-nslog-logo.webp',
+    wrapperClass: styles.wrapperSolidpro,
+  },
 ];
-
-const row1 = partners.slice(0, 5);
-const row2 = partners.slice(5);
 
 export default function PartnersSection() {
   return (
@@ -29,46 +36,25 @@ export default function PartnersSection() {
       <div className={styles.container}>
         <h2 className={styles.title}>IN ASSOCIATION WITH</h2>
         
-        <div className={styles.marqueeContainer}>
-          {/* Row 1: Left to Right */}
-          <div className={`${styles.marqueeRow} ${styles.scrollRight}`}>
-            {[...row1, ...row1, ...row1].map((partner, index) => (
-              <div key={`row1-${partner.id}-${index}`} className={styles.card}>
-                <div className={styles.logoWrapper}>
-                  <Image
-                    src={partner.logoPath}
-                    alt={`${partner.name} logo`}
-                    fill
-                    className={styles.logo}
-                  />
-                </div>
-                <div className={styles.badge}>
-                  <span className={styles.executiveText}>EXICUTIVE</span>
-                  <span className={styles.partnerText}>PARTNER</span>
-                </div>
+        <div className={styles.cardsContainer}>
+          {partners.map((partner) => (
+            <div key={partner.id} className={styles.card}>
+              <div className={`${styles.logoWrapper} ${partner.wrapperClass}`}>
+                <Image
+                  src={partner.logoPath}
+                  alt={`${partner.name} logo`}
+                  fill
+                  className={styles.logo}
+                  sizes="(max-width: 768px) 220px, 280px"
+                  unoptimized
+                />
               </div>
-            ))}
-          </div>
-
-          {/* Row 2: Right to Left */}
-          <div className={`${styles.marqueeRow} ${styles.scrollLeft}`}>
-            {[...row2, ...row2, ...row2].map((partner, index) => (
-              <div key={`row2-${partner.id}-${index}`} className={styles.card}>
-                <div className={styles.logoWrapper}>
-                  <Image
-                    src={partner.logoPath}
-                    alt={`${partner.name} logo`}
-                    fill
-                    className={styles.logo}
-                  />
-                </div>
-                <div className={styles.badge}>
-                  <span className={styles.executiveText}>EXICUTIVE</span>
-                  <span className={styles.partnerText}>PARTNER</span>
-                </div>
+              <div className={styles.badge}>
+                <span className={styles.executiveText}>EXECUTIVE</span>
+                <span className={styles.partnerText}>PARTNER</span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
