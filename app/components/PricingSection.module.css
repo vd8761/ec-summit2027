@@ -43,6 +43,7 @@
   max-width: 1200px;
   width: 100%;
   flex-wrap: wrap;
+  padding-top: 30px; /* Room for limitedSeatsTab */
 }
 
 .card {
@@ -86,8 +87,75 @@
   background-color: #1034A6;
 }
 
+.cardExecutive {
+  background-color: #eaebed;
+  border: 1px solid #d4d6dc;
+}
+
+.cardExecutive .checkIcon {
+  background-color: #888888;
+  color: #ffffff;
+}
+
+.cardExecutive .featureItem {
+  color: #666666;
+}
+
+.cardExecutive:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
 .cardExecutive::before {
-  background: linear-gradient(to right, #666666, #999999);
+  background: linear-gradient(to right, #94a3b8, #cbd5e1);
+}
+
+/* Executive Pass Top Tab (Light Grey / Slate theme) */
+.limitedSeatsTab {
+  position: absolute;
+  top: -24px;
+  right: 20px;
+  background: #64748b;
+  color: #ffffff;
+  font-family: var(--font-geist);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 12px 3px;
+  border-radius: 4px 4px 0 0;
+  text-transform: uppercase;
+  z-index: 5;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Diagonal Sold Out Ribbon (Image 1) */
+.ribbonWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.soldOutRibbon {
+  position: absolute;
+  top: 24px;
+  right: -36px;
+  width: 160px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #991b1b 100%);
+  color: #ffffff;
+  font-family: var(--font-geist);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-align: center;
+  padding: 6px 0;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 .cardVip::before {
@@ -130,6 +198,13 @@
   background-color: transparent;
 }
 
+.tagEarlyBirdBadge {
+  background-color: #FF8800;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+}
+
 .tagGradient {
   background: linear-gradient(to right, #003DFF, #FF8800);
   color: #fff;
@@ -141,6 +216,79 @@
   align-items: baseline;
   gap: 12px;
   margin-bottom: 4px;
+}
+
+.urgencyNotice {
+  font-family: var(--font-geist);
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  color: #dc2626;
+  line-height: 1.45;
+  margin-top: clamp(20px, 2vw, 28px);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Early Bird Callout Card Box (Card Height Harmony) */
+.earlyBirdCardBox {
+  margin-top: clamp(24px, 2.5vw, 32px);
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #FF8800;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.earlyBirdBoxTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.earlyBirdPillBadge {
+  font-family: var(--font-geist);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FF8800 0%, #3057D2 55%, #003DFF 100%);
+  color: #ffffff;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 61, 255, 0.18);
+}
+
+.earlyBirdDiscount {
+  font-family: var(--font-geist);
+  font-size: 10px;
+  font-weight: 700;
+  color: #FF8800;
+  background: rgba(255, 136, 0, 0.1);
+  border: 1px solid rgba(255, 136, 0, 0.28);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.earlyBirdBoxDesc {
+  font-family: var(--font-geist);
+  font-size: 12px;
+  color: #4b5563;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.earlyBirdBoxDesc strong {
+  color: #111827;
+  font-weight: 600;
 }
 
 .originalPrice {
@@ -264,37 +412,239 @@
   height: 14px;
 }
 
+/* ── 1280px+ : Large Desktop ─────────────────────────────── */
+@media (min-width: 1280px) {
+  .cardsContainer {
+    gap: 28px;
+    max-width: 1300px;
+  }
+  .card {
+    min-width: 320px;
+    max-width: 420px;
+    padding: 36px 28px;
+  }
+}
+
+/* ── 1024px : Small Laptop / Large Tablet Landscape ─────── */
 @media (max-width: 1024px) {
   .cardsContainer {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
   .card {
     width: 100%;
-    max-width: 500px;
+    max-width: 560px;
+    min-width: 0;
+  }
+  .offerPrice,
+  .price {
+    font-size: clamp(48px, 7vw, 72px);
+  }
+  .originalPrice {
+    font-size: clamp(26px, 3.5vw, 40px);
   }
 }
 
+/* ── 768px : Tablet Portrait / Phablet ──────────────────── */
 @media (max-width: 768px) {
   .section {
-    padding: 40px 16px;
+    padding: 48px 20px;
+  }
+  .header {
+    margin-bottom: 32px;
   }
   .card {
-    padding: 24px 18px;
-    min-width: 0;
+    padding: 24px 20px;
+    max-width: 100%;
   }
   .tagsRow {
     flex-wrap: wrap;
     gap: 6px;
   }
+  .tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .offerPrice,
   .price {
-    font-size: clamp(36px, 10vw, 54px);
+    font-size: clamp(40px, 9vw, 60px);
+  }
+  .originalPrice {
+    font-size: clamp(22px, 5vw, 34px);
+  }
+  .priceSubtext {
+    font-size: clamp(13px, 3vw, 16px);
+    margin-bottom: 18px;
   }
   .reserveBtn {
     padding: 14px 16px;
+    font-size: 15px;
+  }
+  .featuresTitle {
+    font-size: 13px;
+  }
+  .featureItem {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  .checkIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .checkIcon svg {
+    width: 11px;
+    height: 11px;
   }
 }
 
+/* ── 480px : Large Phone (iPhone Pro Max, Samsung S-series) ─ */
+@media (max-width: 480px) {
+  .section {
+    padding: 36px 14px;
+  }
+  .subtitle {
+    font-size: 11px;
+  }
+  .title {
+    font-size: clamp(22px, 6.5vw, 30px);
+  }
+  .cardsContainer {
+    gap: 12px;
+  }
+  .card {
+    padding: 20px 16px;
+    border-radius: 4px;
+  }
+  .tagsRow {
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  .priceContainer {
+    gap: 8px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .offerPrice,
+  .price {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+  .originalPrice {
+    font-size: clamp(18px, 5.5vw, 28px);
+  }
+  .priceSubtext {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .reserveBtn {
+    padding: 13px 14px;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .featuresDivider {
+    margin-bottom: 14px;
+  }
+  .featuresTitle {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  .featuresList {
+    gap: 10px;
+  }
+  .featureItem {
+    font-size: 13px;
+    gap: 10px;
+  }
+  .checkIcon {
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+  }
+  .checkIcon svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ── 320px : Small Phone (iPhone SE, older Android) ─────── */
+@media (max-width: 375px) {
+  .section {
+    padding: 28px 10px;
+  }
+  .header {
+    margin-bottom: 24px;
+  }
+  .subtitle {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  .title {
+    font-size: clamp(18px, 7vw, 26px);
+  }
+  .cardsContainer {
+    gap: 10px;
+  }
+  .card {
+    padding: 16px 12px;
+  }
+  .tagsRow {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .tag {
+    font-size: 9px;
+    padding: 3px 7px;
+    letter-spacing: 0;
+  }
+  .tagDivider {
+    height: 14px;
+  }
+  .priceContainer {
+    gap: 6px;
+  }
+  .offerPrice,
+  .price {
+    font-size: clamp(30px, 12vw, 44px);
+  }
+  .originalPrice {
+    font-size: clamp(16px, 6vw, 22px);
+  }
+  .priceSubtext {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .reserveBtn {
+    padding: 11px 12px;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .featuresTitle {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .featuresList {
+    gap: 8px;
+  }
+  .featureItem {
+    font-size: 12px;
+    gap: 8px;
+    line-height: 1.35;
+  }
+  .checkIcon {
+    width: 16px;
+    height: 16px;
+  }
+  .checkIcon svg {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+/* ── Expired / disabled state ───────────────────────────── */
 .cardExpired {
   opacity: 0.6;
   pointer-events: none;

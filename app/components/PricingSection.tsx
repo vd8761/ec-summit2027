@@ -52,6 +52,8 @@ export default function PricingSection({ config }: { config?: any }) {
         <div className={`${styles.card} ${styles.cardStandard}`}>
           <div className={styles.tagsRow}>
             <span className={`${styles.tag} ${styles.tagOutline}`}>STANDARD PASS</span>
+            <div className={styles.tagDivider}></div>
+            <span className={`${styles.tag} ${styles.tagEarlyBirdBadge}`}>EARLY BIRD PASS</span>
             {isStandardExpired ? (
               <>
                 <div className={styles.tagDivider}></div>
@@ -78,7 +80,7 @@ export default function PricingSection({ config }: { config?: any }) {
           ) : (
             <Link href="/reserve?type=standard" style={{ width: '100%' }}>
               <button className={`${styles.reserveBtn} ${styles.btnBlue}`}>
-                Apply now
+                Apply Now
               </button>
             </Link>
           )}
@@ -99,17 +101,40 @@ export default function PricingSection({ config }: { config?: any }) {
               <CheckIcon /> Business Lunch
             </li>
           </ul>
+
+          {/* Early Bird Callout Card Box */}
+          <div className={styles.earlyBirdCardBox}>
+            <div className={styles.earlyBirdBoxTop}>
+              <span className={styles.earlyBirdPillBadge}>EARLY BIRD SPECIAL</span>
+              <span className={styles.earlyBirdDiscount}>SAVE 50%</span>
+            </div>
+            <p className={styles.earlyBirdBoxDesc}>
+              Seats filling fast! Grab the <strong>₹5,000</strong> early bird rate before it increases to <strong>₹10,000</strong>.
+            </p>
+          </div>
         </div>
 
         {/* Executive Round Table Pass */}
-        <div className={`${styles.card} ${styles.cardExecutive} ${styles.cardExpired}`}>
+        <div className={`${styles.card} ${styles.cardExecutive}`}>
+          {/* Top Tab: Limited to 70 Seats */}
+          <div className={styles.limitedSeatsTab}>
+            LIMITED TO 70 SEATS
+          </div>
+
+          {/* Diagonal Red Ribbon: Sold Out */}
+          <div className={styles.ribbonWrapper}>
+            <div className={styles.soldOutRibbon}>
+              Sold Out
+            </div>
+          </div>
+
           <div className={styles.tagsRow}>
             <span className={`${styles.tag} ${styles.tagOutline}`}>EXECUTIVE ROUND TABLE PASS</span>
             <div className={styles.tagDivider}></div>
             <span className={`${styles.tag} ${styles.tagOutline}`}>SOLD OUT</span>
           </div>
           
-          <h3 className={styles.price} style={{ color: '#888' }}>SOLD OUT</h3>
+          <h3 className={styles.price} style={{ color: '#888' }}>₹12,000</h3>
           <p className={styles.priceSubtext}>Per person • Exclusive round table access</p>
           
           <button className={`${styles.reserveBtn} ${styles.btnDisabled}`} disabled>
@@ -141,7 +166,7 @@ export default function PricingSection({ config }: { config?: any }) {
             {vipSpotsLeft && (
               <>
                 <div className={styles.tagDivider}></div>
-                <span className={`${styles.tag} ${styles.tagGradient}`}>{vipSpotsLeft} SPOTS LEFT</span>
+                <span className={`${styles.tag} ${styles.tagGradient}`}>ONLY {vipSpotsLeft} SPOTS LEFT</span>
               </>
             )}
             {isVipExpired ? (
