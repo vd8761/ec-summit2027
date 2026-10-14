@@ -3,10 +3,11 @@ export function generateRegistrationEmail(data: any) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3002';
   const logoUrl = `${baseUrl}/EC_logo.png`;
   const bgUrl = `${baseUrl}/Hero_banner_background.png`;
-  
+  const websiteEmail = process.env.NEXT_PUBLIC_WEBSITE_EMAIL_ADDRESS || 'executivescollaboration@gmail.com';
+
   const qrString = `Name: ${data.fullName}\nEmail: ${data.email}\nPhone: ${data.phone}\nCompany: ${data.company}\nRole: ${data.designation}\nPass: ${data.passType}\nAmount: INR ${data.amountPaid}\nPayID: ${data.paymentId}`;
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrString)}&color=0f172a&bgcolor=ffffff`;
-  
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +127,7 @@ export function generateRegistrationEmail(data: any) {
                 <td style="background-color: #f1f5f9; padding: 25px 40px; text-align: center; border-top: 1px solid #e2e8f0;">
                   <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.5;">
                     Please present this digital pass or the QR code at the registration desk.<br/>
-                    For support, contact <a href="mailto:info@executivescollaboration.com" style="color: #003DFF; text-decoration: none; font-weight: 600;">info@executivescollaboration.com</a>
+                    For support, contact <a href="mailto:${websiteEmail}" style="color: #003DFF; text-decoration: none; font-weight: 600;">${websiteEmail}</a>
                   </p>
                   <p style="margin: 16px 0 0 0; font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">
                     © ${new Date().getFullYear()} Executives Collaboration. All rights reserved.

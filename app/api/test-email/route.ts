@@ -30,7 +30,7 @@ export async function GET(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: process.env.SEND_FROM_EMAIL || 'Executive Collaboration <no-reply@executivescollaboration.com>',
-      to: ["executivescollaboration@gmail.com"],
+      to: [process.env.NEXT_PUBLIC_WEBSITE_EMAIL_ADDRESS || "executivescollaboration@gmail.com"],
       subject: `[TEST] Registration Confirmed - Millionaire Summit 2027`,
       html: htmlContent
     });
@@ -39,10 +39,10 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: error.message || 'Failed to send test email' }, { status: 500 });
     }
 
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Test email sent successfully via Resend', 
-      data 
+    return NextResponse.json({
+      success: true,
+      message: 'Test email sent successfully via Resend',
+      data
     });
 
   } catch (error: any) {
