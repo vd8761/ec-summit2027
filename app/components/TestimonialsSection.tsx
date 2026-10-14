@@ -184,9 +184,9 @@ const testimonialsData = [
     id: 24,
     type: "instagram",
     videoId: "DbriY8GTTSY",
-    quote: "Moving toward a self-reliant future—“Viksit Bharat”—requires a monumental shift from job-seeking to job-creating.\n\nAt the Millionaires Summit & Awards, instilling an entrepreneurial mindset in every individual. While traditional paths often focus solely on employment, remarkable platforms like this highlight that every person possesses the potential to lead a business.\n\nBringing together entrepreneurs, managing directors, and industry leaders from across Tamil Nadu and beyond, this summit stands as a true testament to collective business excellence and leadership.",
-    authorName: "SPEAKER TWENTY-FOUR",
-    authorTitle: "Entrepreneur"
+    quote: "Moving toward a self-reliant future—“Viksit Bharat”—requires a monumental shift from job-seeking to job-creating.\n\nAt the Millionaires Summit & Awards, CA Uma Nachiyar emphasized the importance of instilling an entrepreneurial mindset in every individual. While traditional paths often focus solely on employment, remarkable platforms like this highlight that every person possesses the potential to lead a business.\n\nBringing together entrepreneurs, managing directors, and industry leaders from across Tamil Nadu and beyond, this summit stands as a true testament to collective business excellence and leadership.",
+    authorName: "CA UMA NACHIYAR",
+    authorTitle: "Chartered Accountant"
   },
   {
     id: 25,
