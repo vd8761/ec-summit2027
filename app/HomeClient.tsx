@@ -127,11 +127,11 @@ const speakersData = [
     image: "/speakers/Mr_Madhavan_Elango.webp",
   },
   {
-    name: "TO BE ANNOUNCED",
-    role: "SPEAKER",
-    designation: "Visionary Leader",
-    company: "Revealing Soon",
-    image: null,
+    name: "MR. RAMAKRISHNAN RAMAMOORTHY",
+    role: "KEYNOTE SPEAKER",
+    designation: "FFI Certified Family Business Adviser",
+    company: "GMR Group - Principal Associate",
+    image: "/speakers/Mr_Ramakrishnan_Ramamoorthy.webp",
   },
   {
     name: "TO BE ANNOUNCED",
